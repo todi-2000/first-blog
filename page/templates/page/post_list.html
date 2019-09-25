@@ -3,11 +3,12 @@
 <title>Current News</title>
 </head>
 <body>
-<h1>News on Chandrayaan</h1>
-<p>published on 7th September 2019 at 00:30:00</p>
-<h2>landing of chandrayaan-2</h2>
-<p>Its a historic moment for India when chandrayaan-2 is about to land on south pole of moon.Vikram Lander lands at rough surface of moon at 1:53AM on 7th September 2019.When Chandrayaan-1 is launched in 2008 it was discovered the presence of water on moon.
-People all over the world are excited to know why the south pole of moon is not visible and also what is discovered this time.
-Stay updated for more news.</p>
+<h1><a href="https://www.thehindu.com/sci-tech/science/nasa-orbiter-captures-images-of-chandrayaan-2-lander-vikrams-attempted-landing-site/article29460275.ece">News On Chandrayaan</a></h1>
+{% for post in posts%}
+<h3>published: {{post.published_date}}</h3>
+<h2><a href=#>{{post.title}}<a></h2>
+<p>{{post.content}}</p>
+
+{% endfor %}
 </body>
 </html>
