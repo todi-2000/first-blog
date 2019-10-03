@@ -7,7 +7,9 @@
 <link rel="stylesheet" href="{% static 'css/page.css' %}">
 </head>
 <body>
+{% if user.is_authenticated %}
 <a href="{% url 'post_new' %}" class="top-menu"><span class="glyphicon glyphicon-plus"></span>Add more news</a>
+{% endif %}
 <h1><a href="https://timesofindia.indiatimes.com/city/delhi">Current News in Delhi</a></h1>
 
 {% block content %}
