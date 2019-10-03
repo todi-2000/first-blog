@@ -1,17 +1,9 @@
-{% load static %}
-<html>
-<head>
-<title>Current News</title>
-<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
-<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
-<link rel="stylesheet" href="{% static 'css/page.css' %}">
-</head>
-<body>
-<h1><a href="https://www.thehindu.com/sci-tech/science/nasa-orbiter-captures-images-of-chandrayaan-2-lander-vikrams-attempted-landing-site/article29460275.ece">News On Chandrayaan</a></h1>
+{% extends "page/base.html" %}
+
+{% block content %}
 {% for post in posts%}
-<h3>published: {{post.published_date}}</h3>
-<h2><a href=#>{{post.title}}</a></h2>
+<h2><a href="{% url 'post_detail' pk=post.pk %}">{{post.title}}</a>   <a class="btn btn-default" href="{% url 'post_edit' pk=post.pk %}"><span class="glyphicon glyphicon-pencil"></span>Edit</a> </h2>
 <p>{{post.content}}</p>
+<h3>published: {{post.published_date}}</h3>
 {% endfor %}
-</body>
-</html>
+{% endblock %}

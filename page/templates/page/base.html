@@ -1,0 +1,15 @@
+{% load static %}
+<html>
+<head>
+<title>Current News</title>
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+<link rel="stylesheet" href="{% static 'css/page.css' %}">
+</head>
+<body>
+<a href="{% url 'post_new' %}" class="top-menu"><span class="glyphicon glyphicon-plus"></span>Add more news</a>
+<h1><a href="https://timesofindia.indiatimes.com/city/delhi">Current News in Delhi</a></h1>
+
+{% block content %}
+{% endblock %}
+</body>
